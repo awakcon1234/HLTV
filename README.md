@@ -1,6 +1,6 @@
 
 <h1 align="center">
-  <img src="https://www.hltv.org/img/static/TopLogoDark2x.png" alt="HLTV logo" width="200">
+  <img src="https://www.hltv.org/img/static/openGraphHltvLogo.png" alt="HLTV logo" width="200">
   <br>
   The unofficial HLTV Node.js API
   <br>
