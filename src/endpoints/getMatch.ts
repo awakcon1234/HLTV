@@ -79,6 +79,9 @@ export interface Stream {
 
 export interface FullMatchTeam extends Team {
   rank?: number
+  countryCode: string
+  flagUrl: string
+  teamLogoUrl?: string
 }
 
 export interface FullMatch {
@@ -95,7 +98,7 @@ export interface FullMatch {
   hasScorebot: boolean
   team1?: FullMatchTeam
   team2?: FullMatchTeam
-  winnerTeam?: FullMatchTeam
+  winnerTeam?: Team
   vetoes: Veto[]
   event: Event
   odds: ProviderOdds[]
@@ -206,7 +209,13 @@ function getTeam($: HLTVPage, n: 1 | 2): FullMatchTeam | undefined {
           .eq(n - 1)
           .contents()
           .eq(1)
-          .textThen((x) => parseNumber(x.replace(/#/g, '')))
+          .textThen((x) => parseNumber(x.replace(/#/g, ''))),
+        countryCode: $(`.team > img.team${n}`).attrThen("src", (src) => {
+          const parts = src.split("/");
+          return parts[parts.length - 1].replace(".png", "").toLocaleLowerCase();
+        }),
+        flagUrl: $(`.team > img.team${n}`).attr("src"),
+        teamLogoUrl: $(`.team${n}-gradient .logo`).attr("src"),
       }
     : undefined
 }
