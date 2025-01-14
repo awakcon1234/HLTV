@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gigobyte/HLTV.git"
+    "url": "git+https://github.com/awakcon1234/HLTV.git"
   },
   "keywords": [
     "hltv",
@@ -43,9 +43,9 @@
   "author": "Stanislav Iliev",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gigobyte/HLTV/issues"
+    "url": "https://github.com/awakcon1234/HLTV/issues"
   },
-  "homepage": "https://github.com/gigobyte/HLTV#readme",
+  "homepage": "https://github.com/awakcon1234/HLTV#readme",
   "devDependencies": {
     "@types/cheerio": "0.22.32",
     "@types/jest": "29.5.5",
