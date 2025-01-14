@@ -1,10 +1,5 @@
 import { HLTV } from './index'
 
-const log = (promise: Promise<any>) =>
-  promise
-    .then((res) => console.dir(res, { depth: null }))
-    .catch((err) => console.log(err))
-
 // log(HLTV.getMatch({ id: 2346924 }))
 // log(HLTV.getMatches())
 // log(HLTV.getEvent({ id: 6810 }))
@@ -23,3 +18,8 @@ const log = (promise: Promise<any>) =>
 // log(HLTV.getTeamRanking())
 // log(HLTV.getResults({ eventIds: [1617] }))
 // log(HLTV.getNews())
+
+(async () => {
+	const data = await HLTV.getMatch({ id: 2378246 });
+	console.log(data.team1);
+})();
